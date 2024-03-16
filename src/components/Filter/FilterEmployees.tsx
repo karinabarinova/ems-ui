@@ -1,6 +1,6 @@
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-import {DEPARTMENTS_KEY} from "utils/constants";
+import { DEPARTMENTS_KEY } from "utils/constants";
 import styles from "./FilterEmployees.module.css";
 
 type FilterEmployeesProps = {
