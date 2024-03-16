@@ -1,10 +1,10 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import {
   GET_EMPLOYEES_ENDPOINT,
   DEPARTMENTS_KEY,
   EMPLOYEES_KEY,
 } from "utils/constants";
-import {Employee} from "components/EmployeesTable/EmployeesTable.types";
+import { Employee } from "components/EmployeesTable/EmployeesTable.types";
 
 interface EmployeesData {
   employees: Employee[];
@@ -24,7 +24,7 @@ export const useEmployeesData = (): EmployeesData => {
     fetchEmployees();
   }, []);
 
-  console.log({length: employees.length});
+  console.log({ length: employees.length });
   const deleteEmployee = (index: number) => {
     const updatedEmployees = employees.filter((_, i) => i !== index);
 

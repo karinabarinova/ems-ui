@@ -1,3 +1,5 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
@@ -6,10 +8,14 @@ export const Header = () => {
     <header>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Employee Management System</Navbar.Brand>
+          <NavLink className="navbar-brand" to="/">
+            Employee Management System
+          </NavLink>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>Add a new user</Navbar.Text>
+            <NavLink className="text-decoration-none" to="/add-employee">
+              Add a new employee
+            </NavLink>
           </Navbar.Collapse>
         </Container>
       </Navbar>
