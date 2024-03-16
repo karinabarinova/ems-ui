@@ -1,0 +1,484 @@
+{
+    "employees": [
+        {
+            "name": "David Smith",
+            "email": "david.smith@example.com",
+            "position": "Financial Analyst",
+            "department": "Finance",
+            "salary": 72000,
+            "startDate": "2021-01-15T08:45:00.000Z"
+        },
+        {
+            "name": "Emma Johnson",
+            "email": "emma.johnson@example.com",
+            "position": "HR Manager",
+            "department": "Human Resources",
+            "salary": 98000,
+            "startDate": "2018-07-20T12:30:00.000Z"
+        },
+        {
+            "name": "James Brown",
+            "email": "james.brown@example.com",
+            "position": "Software Developer",
+            "department": "Engineering",
+            "salary": 85000,
+            "startDate": "2019-04-05T09:15:00.000Z"
+        },
+        {
+            "name": "Sophie Wilson",
+            "email": "sophie.wilson@example.com",
+            "position": "Sales Manager",
+            "department": "Sales",
+            "salary": 105000,
+            "startDate": "2020-02-10T10:00:00.000Z"
+        },
+        {
+            "name": "Michael Johnson",
+            "email": "michael.johnson@example.com",
+            "position": "Data Scientist",
+            "department": "Research",
+            "salary": 90000,
+            "startDate": "2017-09-25T11:45:00.000Z"
+        },
+        {
+            "name": "Isabella Brown",
+            "email": "isabella.brown@example.com",
+            "position": "Marketing Specialist",
+            "department": "Marketing",
+            "salary": 78000,
+            "startDate": "2022-03-30T13:00:00.000Z"
+        },
+        {
+            "name": "Daniel Miller",
+            "email": "daniel.miller@example.com",
+            "position": "Product Manager",
+            "department": "Product Management",
+            "salary": 95000,
+            "startDate": "2020-10-15T14:30:00.000Z"
+        },
+        {
+            "name": "Olivia Davis",
+            "email": "olivia.davis@example.com",
+            "position": "Customer Support Specialist",
+            "department": "Customer Service",
+            "salary": 70000,
+            "startDate": "2019-11-05T15:45:00.000Z"
+        },
+        {
+            "name": "Liam Jones",
+            "email": "liam.jones@example.com",
+            "position": "UX/UI Designer",
+            "department": "Design",
+            "salary": 85000,
+            "startDate": "2018-06-20T16:00:00.000Z"
+        },
+        {
+            "name": "Ava Martinez",
+            "email": "ava.martinez@example.com",
+            "position": "Operations Manager",
+            "department": "Operations",
+            "salary": 92000,
+            "startDate": "2021-08-25T17:15:00.000Z"
+        },
+        {
+            "name": "Noah Taylor",
+            "email": "noah.taylor@example.com",
+            "position": "Quality Assurance Engineer",
+            "department": "Quality Assurance",
+            "salary": 80000,
+            "startDate": "2017-04-10T18:30:00.000Z"
+        },
+        {
+            "name": "Sophia Rodriguez",
+            "email": "sophia.rodriguez@example.com",
+            "position": "Project Manager",
+            "department": "Project Management",
+            "salary": 93000,
+            "startDate": "2023-02-01T19:45:00.000Z"
+        },
+        {
+            "name": "William Anderson",
+            "email": "william.anderson@example.com",
+            "position": "Systems Analyst",
+            "department": "IT",
+            "salary": 85000,
+            "startDate": "2020-01-05T20:00:00.000Z"
+        },
+        {
+            "name": "Mia Hernandez",
+            "email": "mia.hernandez@example.com",
+            "position": "Business Analyst",
+            "department": "Business Analysis",
+            "salary": 88000,
+            "startDate": "2019-05-20T21:15:00.000Z"
+        },
+        {
+            "name": "Ethan Lopez",
+            "email": "ethan.lopez@example.com",
+            "position": "Technical Writer",
+            "department": "Customer Service",
+            "salary": 72000,
+            "startDate": "2018-02-15T22:30:00.000Z"
+        },
+        {
+            "name": "Amelia Gonzalez",
+            "email": "amelia.gonzalez@example.com",
+            "position": "Financial Advisor",
+            "department": "Finance",
+            "salary": 96000,
+            "startDate": "2022-07-10T23:45:00.000Z"
+        },
+        {
+            "name": "Michael Lee",
+            "email": "michael.lee@example.com",
+            "position": "Network Administrator",
+            "department": "IT",
+            "salary": 84000,
+            "startDate": "2021-06-15T00:00:00.000Z"
+        },
+        {
+            "name": "Charlotte Perez",
+            "email": "charlotte.perez@example.com",
+            "position": "Training Specialist",
+            "department": "Engineering",
+            "salary": 75000,
+            "startDate": "2020-03-20T01:15:00.000Z"
+        },
+        {
+            "name": "Logan Wright",
+            "email": "logan.wright@example.com",
+            "position": "Database Administrator",
+            "department": "IT",
+            "salary": 87000,
+            "startDate": "2019-08-05T02:30:00.000Z"
+        },
+        {
+            "name": "Grace Scott",
+            "email": "grace.scott@example.com",
+            "position": "Technical Support Engineer",
+            "department": "Technical Support",
+            "salary": 79000,
+            "startDate": "2018-03-10T03:45:00.000Z"
+        },
+        {
+            "name": "Alexander Nguyen",
+            "email": "alexander.nguyen@example.com",
+            "position": "Data Analyst",
+            "department": "Analytics",
+            "salary": 76000,
+            "startDate": "2022-04-15T08:45:00.000Z"
+        },
+        {
+            "name": "Emily King",
+            "email": "emily.king@example.com",
+            "position": "Content Writer",
+            "department": "Marketing",
+            "salary": 70000,
+            "startDate": "2023-07-20T12:30:00.000Z"
+        },
+        {
+            "name": "Lucas Baker",
+            "email": "lucas.baker@example.com",
+            "position": "Graphic Designer",
+            "department": "Design",
+            "salary": 82000,
+            "startDate": "2020-10-05T09:15:00.000Z"
+        },
+        {
+            "name": "Avery Reed",
+            "email": "avery.reed@example.com",
+            "position": "Supply Chain Manager",
+            "department": "Operations",
+            "salary": 94000,
+            "startDate": "2021-02-10T10:00:00.000Z"
+        },
+        {
+            "name": "Benjamin Cooper",
+            "email": "benjamin.cooper@example.com",
+            "position": "Systems Engineer",
+            "department": "IT",
+            "salary": 89000,
+            "startDate": "2019-09-25T11:45:00.000Z"
+        },
+        {
+            "name": "Madison Morgan",
+            "email": "madison.morgan@example.com",
+            "position": "Event Coordinator",
+            "department": "Events",
+            "salary": 73000,
+            "startDate": "2022-08-30T13:00:00.000Z"
+        },
+        {
+            "name": "Henry Hill",
+            "email": "henry.hill@example.com",
+            "position": "Sales Representative",
+            "department": "Sales",
+            "salary": 78000,
+            "startDate": "2020-11-15T14:30:00.000Z"
+        },
+        {
+            "name": "Nora Carter",
+            "email": "nora.carter@example.com",
+            "position": "Legal Counsel",
+            "department": "Legal",
+            "salary": 102000,
+            "startDate": "2021-04-05T15:45:00.000Z"
+        },
+        {
+            "name": "Elijah Price",
+            "email": "elijah.price@example.com",
+            "position": "Software Developer",
+            "department": "Engineering",
+            "salary": 81000,
+            "startDate": "2018-06-20T16:00:00.000Z"
+        },
+        {
+            "name": "Scarlett Morris",
+            "email": "scarlett.morris@example.com",
+            "position": "Public Relations Specialist",
+            "department": "Public Relations",
+            "salary": 85000,
+            "startDate": "2019-09-25T17:15:00.000Z"
+        },
+        {
+            "name": "Carter Brooks",
+            "email": "carter.brooks@example.com",
+            "position": "Quality Control Manager",
+            "department": "Quality Assurance",
+            "salary": 92000,
+            "startDate": "2020-06-10T18:30:00.000Z"
+        },
+        {
+            "name": "Violet Rivera",
+            "email": "violet.rivera@example.com",
+            "position": "Customer Success Manager",
+            "department": "Customer Service",
+            "salary": 88000,
+            "startDate": "2021-01-01T19:45:00.000Z"
+        },
+        {
+            "name": "Jack Evans",
+            "email": "jack.evans@example.com",
+            "position": "Technical Consultant",
+            "department": "Consulting",
+            "salary": 96000,
+            "startDate": "2022-03-05T20:00:00.000Z"
+        },
+        {
+            "name": "Leah Russell",
+            "email": "leah.russell@example.com",
+            "position": "Training Coordinator",
+            "department": "Training",
+            "salary": 75000,
+            "startDate": "2019-04-20T21:15:00.000Z"
+        },
+        {
+            "name": "Gabriel Diaz",
+            "email": "gabriel.diaz@example.com",
+            "position": "Financial Planner",
+            "department": "Finance",
+            "salary": 98000,
+            "startDate": "2020-05-15T22:30:00.000Z"
+        },
+        {
+            "name": "Ella Thomas",
+            "email": "ella.thomas@example.com",
+            "position": "Financial Analyst",
+            "department": "Finance",
+            "salary": 78000,
+            "startDate": "2022-01-15T08:45:00.000Z"
+        },
+        {
+            "name": "Jacob White",
+            "email": "jacob.white@example.com",
+            "position": "HR Manager",
+            "department": "Human Resources",
+            "salary": 100000,
+            "startDate": "2019-07-20T12:30:00.000Z"
+        },
+        {
+            "name": "Sophia Clark",
+            "email": "sophia.clark@example.com",
+            "position": "Software Developer",
+            "department": "Engineering",
+            "salary": 87000,
+            "startDate": "2020-04-05T09:15:00.000Z"
+        },
+        {
+            "name": "Ethan Stewart",
+            "email": "ethan.stewart@example.com",
+            "position": "Sales Manager",
+            "department": "Sales",
+            "salary": 108000,
+            "startDate": "2021-02-10T10:00:00.000Z"
+        },
+        {
+            "name": "Ava Nelson",
+            "email": "ava.nelson@example.com",
+            "position": "Software Development Engineer in Test",
+            "department": "Quality Assurance",
+            "salary": 92000,
+            "startDate": "2018-08-25T11:45:00.000Z"
+        },
+        {
+            "name": "Jackie Adams",
+            "email": "jackie.adams@example.com",
+            "position": "Marketing Specialist",
+            "department": "Marketing",
+            "salary": 80000,
+            "startDate": "2023-03-30T13:00:00.000Z"
+        },
+        {
+            "name": "Andrew Scott",
+            "email": "andrew.scott@example.com",
+            "position": "Product Manager",
+            "department": "Product Management",
+            "salary": 97000,
+            "startDate": "2020-11-15T14:30:00.000Z"
+        },
+        {
+            "name": "Abigail Baker",
+            "email": "abigail.baker@example.com",
+            "position": "Customer Support Specialist",
+            "department": "Customer Service",
+            "salary": 72000,
+            "startDate": "2019-12-05T15:45:00.000Z"
+        },
+        {
+            "name": "Henry Foster",
+            "email": "henry.foster@example.com",
+            "position": "UX/UI Designer",
+            "department": "Design",
+            "salary": 88000,
+            "startDate": "2018-08-20T16:00:00.000Z"
+        },
+        {
+            "name": "Emma Cooper",
+            "email": "emma.cooper@example.com",
+            "position": "Operations Manager",
+            "department": "Operations",
+            "salary": 95000,
+            "startDate": "2021-09-25T17:15:00.000Z"
+        },
+        {
+            "name": "Noah Hill",
+            "email": "noah.hill@example.com",
+            "position": "Quality Assurance Engineer",
+            "department": "Quality Assurance",
+            "salary": 82000,
+            "startDate": "2017-05-10T18:30:00.000Z"
+        },
+        {
+            "name": "Isabella King",
+            "email": "isabella.king@example.com",
+            "position": "Project Manager",
+            "department": "Project Management",
+            "salary": 94000,
+            "startDate": "2023-03-01T19:45:00.000Z"
+        },
+        {
+            "name": "William Bailey",
+            "email": "william.bailey@example.com",
+            "position": "Systems Analyst",
+            "department": "IT",
+            "salary": 87000,
+            "startDate": "2020-02-05T20:00:00.000Z"
+        },
+        {
+            "name": "Sofia Murphy",
+            "email": "sofia.murphy@example.com",
+            "position": "Business Analyst",
+            "department": "Business Analysis",
+            "salary": 89000,
+            "startDate": "2019-06-20T21:15:00.000Z"
+        },
+        {
+            "name": "Daniel Turner",
+            "email": "daniel.turner@example.com",
+            "position": "Technical Writer",
+            "department": "Documentation",
+            "salary": 74000,
+            "startDate": "2018-03-15T22:30:00.000Z"
+        },
+        {
+            "name": "Elena Perez",
+            "email": "elena.perez@example.com",
+            "position": "Financial Advisor",
+            "department": "Finance",
+            "salary": 98000,
+            "startDate": "2022-08-10T23:45:00.000Z"
+        },
+        {
+            "name": "Michael Wood",
+            "email": "michael.wood@example.com",
+            "position": "Network Administrator",
+            "department": "IT",
+            "salary": 86000,
+            "startDate": "2021-07-15T00:00:00.000Z"
+        },
+        {
+            "name": "Chloe Nelson",
+            "email": "chloe.nelson@example.com",
+            "position": "Training Specialist",
+            "department": "Training",
+            "salary": 76000,
+            "startDate": "2020-04-20T01:15:00.000Z"
+        },
+        {
+            "name": "Lucas Turner",
+            "email": "lucas.turner@example.com",
+            "position": "Database Administrator",
+            "department": "IT",
+            "salary": 88000,
+            "startDate": "2019-09-05T02:30:00.000Z"
+        },
+        {
+            "name": "Lily Mitchell",
+            "email": "lily.mitchell@example.com",
+            "position": "Technical Support Engineer",
+            "department": "Technical Support",
+            "salary": 81000,
+            "startDate": "2018-04-10T03:45:00.000Z"
+        },
+        {
+            "name": "Audrey Bell",
+            "email": "audrey.bell@example.com",
+            "position": "HR Specialist",
+            "department": "Human Resources",
+            "salary": 72000,
+            "startDate": "2018-09-10T23:45:00.000Z"
+        },
+        {
+            "name": "Isaac Stewart",
+            "email": "isaac.stewart@example.com",
+            "position": "Product Designer",
+            "department": "Product Management",
+            "salary": 89000,
+            "startDate": "2021-07-15T00:00:00.000Z"
+        },
+        {
+            "name": "Hannah Bailey",
+            "email": "hannah.bailey@example.com",
+            "position": "Marketing Coordinator",
+            "department": "Marketing",
+            "salary": 76000,
+            "startDate": "2023-02-20T01:15:00.000Z"
+        },
+        {
+            "name": "Connor Murphy",
+            "email": "connor.murphy@example.com",
+            "position": "Business Development Manager",
+            "department": "Business Development",
+            "salary": 94000,
+            "startDate": "2022-11-05T02:30:00.000Z"
+        },
+        {
+            "name": "Aria Ward",
+            "email": "aria.ward@example.com",
+            "position": "UX Researcher",
+            "department": "Design",
+            "salary": 80000,
+            "startDate": "2021-08-10T03:45:00.000Z"
+        }
+    ]
+}
