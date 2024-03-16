@@ -9,9 +9,7 @@ export const Header = () => {
           <Navbar.Brand href="#home">Employee Management System</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              Add a new user
-            </Navbar.Text>
+            <Navbar.Text>Add a new user</Navbar.Text>
           </Navbar.Collapse>
         </Container>
       </Navbar>
