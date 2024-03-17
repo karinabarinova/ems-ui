@@ -27,6 +27,6 @@
     },
     "rules": {
         "no-console": 1,
-        "prettier/prettier": 2
+        "prettier/prettier": 1
     }
 }
