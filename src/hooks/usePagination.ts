@@ -7,6 +7,14 @@ import { useState, useMemo } from "react";
  * @returns Pagination state and functions
  */
 
+export interface Pagination {
+    currentPage: number;
+    totalPages: number;
+    firstIndex: number;
+    lastIndex: number;
+    handlePageChange: (pageNumber: number) => void;
+}
+
 const usePagination = (totalItems: number, itemsPerPage: number) => {
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -27,18 +35,12 @@ const usePagination = (totalItems: number, itemsPerPage: number) => {
         setCurrentPage(pageNumber);
     };
 
-    // Generate array of page numbers for pagination control
-    const pageNumbers = useMemo(() => {
-        return Array.from({ length: totalPages }, (_, index) => index + 1);
-    }, [totalPages]);
-
     return {
         currentPage,
         totalPages,
         firstIndex,
         lastIndex,
         handlePageChange,
-        pageNumbers,
     };
 };
 

@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { ITEMS_PER_PAGE } from "utils/constants";
 import { TableContentProps } from "./Table.types";
+import { BsFillTrash3Fill } from "react-icons/bs";
 
 const TableContent: React.FC<TableContentProps> = ({
     employees,
@@ -40,6 +41,7 @@ const TableContent: React.FC<TableContentProps> = ({
                 {employees?.map(
                     (
                         {
+                            id,
                             name,
                             email,
                             position,
@@ -49,7 +51,7 @@ const TableContent: React.FC<TableContentProps> = ({
                         },
                         index,
                     ) => (
-                        <tr key={`${email}-${index}`}>
+                        <tr key={id}>
                             <th scope="row">
                                 {calculateRowNumber(currentPage, index)}
                             </th>
@@ -62,8 +64,8 @@ const TableContent: React.FC<TableContentProps> = ({
                             <td>
                                 <Button
                                     variant="outline-danger"
-                                    onClick={() => onDelete(email)}>
-                                    Delete
+                                    onClick={() => onDelete(id)}>
+                                    <BsFillTrash3Fill />
                                 </Button>
                             </td>
                         </tr>

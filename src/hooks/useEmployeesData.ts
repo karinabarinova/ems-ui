@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
-import {
-    GET_EMPLOYEES_ENDPOINT,
-    DEPARTMENTS_KEY,
-    EMPLOYEES_KEY,
-} from "utils/constants";
+import { EMPLOYEES_ENDPOINT } from "utils/constants";
 import { Employee } from "components/EmployeesTable/EmployeesTable.types";
 
-interface EmployeesData {
+export interface EmployeesData {
     employees: Employee[];
     selectedDepartment: string;
     setSelectedDepartment: React.Dispatch<React.SetStateAction<string>>;
     searchValue: string;
     setSearchValue: React.Dispatch<React.SetStateAction<string>>;
     deleteEmployee: (index: number) => void;
+    createEmployee: (employee: Employee) => void;
 }
 
 export const useEmployeesData = (): EmployeesData => {
@@ -24,69 +21,54 @@ export const useEmployeesData = (): EmployeesData => {
         fetchEmployees();
     }, []);
 
-    console.log({ length: employees.length });
-    const deleteEmployee = (index: number) => {
-        const updatedEmployees = employees.filter((_, i) => i !== index);
-
-        // Update localStorage with the modified list of employees
-        localStorage.setItem(EMPLOYEES_KEY, JSON.stringify(updatedEmployees));
-        setEmployees(updatedEmployees);
+    const deleteEmployee = async (employeeId: number) => {
+        try {
+            const response = await fetch(
+                `${EMPLOYEES_ENDPOINT}/${employeeId}`,
+                {
+                    method: "DELETE",
+                },
+            );
+            if (!response.ok) {
+                throw new Error("Failed to delete an employees");
+            }
+            const updatedEmployees = employees.filter(
+                ({ id }) => id !== employeeId,
+            );
+            setEmployees(updatedEmployees);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
-    // const addEmployee = async () => {
-    //     try {
-    //         const localData = JSON.parse(
-    //             localStorage.getItem(EMPLOYEES_KEY) || "[]",
-    //         );
-    //         if (localData.length !== 0) {
-    //             setEmployees(localData);
-    //         } else {
-    //             const response = await fetch("http://localhost:8000/posts", {
-    //                 method: "POST",
-    //                 headers: {
-    //                     "Content-Type": "application/json",
-    //                 },
-    //                 body: JSON.stringify({id, title, author}),
-    //             })
-    //             // if (!response.ok) {
-    //             //     throw new Error("Failed to fetch employees");
-    //             // }
-    //             // const data: Employee[] = await response.json();
-    //             // const uniqueDepartments: Set<string> = new Set(
-    //             //     data.map(employee => employee.department),
-    //             // );
-    //             // localStorage.setItem(
-    //             //     DEPARTMENTS_KEY,
-    //             //     JSON.stringify(Array.from(uniqueDepartments)),
-    //             // );
-    //             // localStorage.setItem(EMPLOYEES_KEY, JSON.stringify(data));
-    //             setEmployees(data);
-    //         }
-    //     }
+    const createEmployee = async (employee: Employee) => {
+        try {
+            const response = await fetch(EMPLOYEES_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(employee),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to create an employees");
+            }
+
+            setEmployees(oldEmployees => [...oldEmployees, employee]);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     const fetchEmployees = async () => {
         try {
-            const localData = JSON.parse(
-                localStorage.getItem(EMPLOYEES_KEY) || "[]",
-            );
-            if (localData.length !== 0) {
-                setEmployees(localData);
-            } else {
-                const response = await fetch(GET_EMPLOYEES_ENDPOINT);
-                if (!response.ok) {
-                    throw new Error("Failed to fetch employees");
-                }
-                const data: Employee[] = await response.json();
-                const uniqueDepartments: Set<string> = new Set(
-                    data.map(employee => employee.department),
-                );
-                localStorage.setItem(
-                    DEPARTMENTS_KEY,
-                    JSON.stringify(Array.from(uniqueDepartments)),
-                );
-                localStorage.setItem(EMPLOYEES_KEY, JSON.stringify(data));
-                setEmployees(data);
+            const response = await fetch(EMPLOYEES_ENDPOINT);
+            if (!response.ok) {
+                throw new Error("Failed to fetch employees");
             }
+            const data: Employee[] = await response.json();
+            setEmployees(data);
         } catch (error) {
             console.error(error);
         }
@@ -99,5 +81,6 @@ export const useEmployeesData = (): EmployeesData => {
         searchValue,
         setSearchValue,
         deleteEmployee,
+        createEmployee,
     };
 };

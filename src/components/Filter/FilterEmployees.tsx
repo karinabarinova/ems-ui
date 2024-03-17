@@ -1,7 +1,6 @@
 import React from "react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-import { DEPARTMENTS_KEY } from "utils/constants";
 import styles from "./FilterEmployees.module.css";
 import { FilterEmployeesProps } from "./FilterEmployees.types";
 
@@ -10,10 +9,8 @@ const DROPDOWN_HEADER_TITLE = "Filter by Department";
 const FilterEmployees: React.FC<FilterEmployeesProps> = ({
     selectedDepartment,
     handleDepartmentChoice,
+    departments,
 }) => {
-    const departments: string[] = JSON.parse(
-        localStorage.getItem(DEPARTMENTS_KEY) || "[]",
-    );
     const title = selectedDepartment || DROPDOWN_HEADER_TITLE;
     const isResetDisabled = !selectedDepartment;
 

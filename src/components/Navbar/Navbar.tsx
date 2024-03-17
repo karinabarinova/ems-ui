@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import { BsPersonAdd } from "react-icons/bs";
 
 export const NavBar: React.FC = () => {
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
+
+    const updateMedia = () => {
+        setDesktop(window.innerWidth > 1450);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
+
     return (
         <header>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
                     <NavLink className="navbar-brand" to="/">
-                        Employee Management System
+                        {isDesktop ? "Employee Management System" : "EMS"}
                     </NavLink>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <NavLink
                             className="text-decoration-none"
                             to="/add-employee">
-                            Add a new employee
+                            <BsPersonAdd className="text-light h3" />
                         </NavLink>
                     </Navbar.Collapse>
                 </Container>

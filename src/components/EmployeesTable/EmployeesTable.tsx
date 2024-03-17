@@ -1,16 +1,18 @@
-import React from "react";
-import usePagination from "hooks/usePagination";
-import { ITEMS_PER_PAGE } from "utils/constants";
+import React, { useContext } from "react";
 import TablePagination from "./components/Pagination/Pagination";
 import TableContent from "./components/Table/Table";
 import { EmployeesTableProps } from "./EmployeesTable.types";
+import { EmployeesDataContext } from "context/employeesDataContext";
 
-const EmployeesTable: React.FC<EmployeesTableProps> = ({
-    employees,
-    onDelete,
-}) => {
-    const { currentPage, totalPages, firstIndex, lastIndex, handlePageChange } =
-        usePagination(employees.length, ITEMS_PER_PAGE);
+const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
+    const {
+        currentPage,
+        totalPages,
+        firstIndex,
+        lastIndex,
+        handlePageChange,
+        deleteEmployee,
+    } = useContext(EmployeesDataContext);
 
     const employeeRows = employees.slice(firstIndex, lastIndex);
 
@@ -18,7 +20,7 @@ const EmployeesTable: React.FC<EmployeesTableProps> = ({
         <>
             <TableContent
                 employees={employeeRows}
-                onDelete={onDelete}
+                onDelete={deleteEmployee}
                 currentPage={currentPage}
             />
             <TablePagination

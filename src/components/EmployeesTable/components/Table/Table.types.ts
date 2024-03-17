@@ -2,4 +2,5 @@ import { EmployeesTableProps } from "components/EmployeesTable/EmployeesTable.ty
 
 export interface TableContentProps extends EmployeesTableProps {
     currentPage: number;
+    onDelete: (id: number) => void;
 }
