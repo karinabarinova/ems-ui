@@ -3,6 +3,8 @@ import { Table, Button } from "react-bootstrap";
 import { BsFillTrash3Fill } from "react-icons/bs";
 import { ITEMS_PER_PAGE } from "utils/constants";
 import { TableContentProps } from "./Table.types";
+import styles from "./Table.module.css";
+import { formatDate, formatSalary } from "utils";
 
 const TableContent: React.FC<TableContentProps> = ({
     employees,
@@ -26,7 +28,7 @@ const TableContent: React.FC<TableContentProps> = ({
     };
 
     return (
-        <Table striped bordered hover responsive className="noWrap">
+        <Table striped bordered hover responsive className={styles.noWrap}>
             <thead>
                 <tr>
                     {tableColumns.map(column => (
@@ -58,8 +60,8 @@ const TableContent: React.FC<TableContentProps> = ({
                             <td>{email}</td>
                             <td>{position}</td>
                             <td>{department}</td>
-                            <td>{salary}</td>
-                            <td>{new Date(startDate).toDateString()}</td>
+                            <td>{formatSalary(salary)}</td>
+                            <td>{formatDate(startDate)}</td>
                             <td>
                                 <Button
                                     variant="outline-danger"
