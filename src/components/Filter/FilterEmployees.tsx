@@ -1,8 +1,7 @@
 import React from "react";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
-import styles from "./FilterEmployees.module.css";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 import { FilterEmployeesProps } from "./FilterEmployees.types";
+import styles from "./FilterEmployees.module.css";
 
 const DROPDOWN_HEADER_TITLE = "Filter by Department";
 

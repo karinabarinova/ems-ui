@@ -1,9 +1,8 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
+import { Table, Button } from "react-bootstrap";
+import { BsFillTrash3Fill } from "react-icons/bs";
 import { ITEMS_PER_PAGE } from "utils/constants";
 import { TableContentProps } from "./Table.types";
-import { BsFillTrash3Fill } from "react-icons/bs";
 
 const TableContent: React.FC<TableContentProps> = ({
     employees,

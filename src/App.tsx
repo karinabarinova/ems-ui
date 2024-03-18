@@ -4,7 +4,7 @@ import AddEmployee from "pages/add-employee";
 import ErrorPage from "pages/error";
 import Home from "pages/home";
 import EmployeesDataContextProvider from "context/employeesDataContext";
-import { Layout } from "Layout";
+import Layout from "./Layout";
 import "./App.css";
 
 function App() {

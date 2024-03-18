@@ -1,7 +1,7 @@
 import React from "react";
-import Pagination from "react-bootstrap/Pagination";
-import styles from "./Pagination.module.css";
+import { Pagination } from "react-bootstrap";
 import { TablePaginationProps } from "./Pagination.types";
+import styles from "./Pagination.module.css";
 
 const TablePagination: React.FC<TablePaginationProps> = ({
     handlePageChange,

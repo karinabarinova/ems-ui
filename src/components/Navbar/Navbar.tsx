@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
+import { Navbar, Container } from "react-bootstrap";
 import { BsPersonAdd } from "react-icons/bs";
 
-export const NavBar: React.FC = () => {
+const NavBar: React.FC = () => {
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
 
     const updateMedia = () => {
@@ -36,3 +35,5 @@ export const NavBar: React.FC = () => {
         </header>
     );
 };
+
+export default NavBar;

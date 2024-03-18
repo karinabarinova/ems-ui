@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import Container from "react-bootstrap/Container";
+import { Container } from "react-bootstrap";
 import FilterEmployees from "components/Filter/FilterEmployees";
 import EmployeesTable from "components/EmployeesTable/EmployeesTable";
 import Search from "components/Search/Search";
 import { EmployeesDataContext } from "context/employeesDataContext";
 
-const Home = () => {
+const Home: React.FC = () => {
     const {
         selectedDepartment,
         setSelectedDepartment,

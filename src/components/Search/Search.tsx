@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useMemo } from "react";
 import debounce from "lodash.debounce";
-import Form from "react-bootstrap/Form";
+import { Form } from "react-bootstrap";
 import { SearchProps } from "./Search.types";
 
 const Search = ({ setSearchValue }: SearchProps) => {

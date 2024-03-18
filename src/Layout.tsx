@@ -1,8 +1,8 @@
 import React from "react";
-import { NavBar } from "components/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
+import NavBar from "components/Navbar/Navbar";
 
-export function Layout() {
+const Layout: React.FC = () => {
     return (
         <>
             <NavBar />
@@ -11,4 +11,6 @@ export function Layout() {
             </main>
         </>
     );
-}
+};
+
+export default Layout;
