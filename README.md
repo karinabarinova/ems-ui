@@ -4,10 +4,9 @@
 Welcome to the Employee Management System documentation! This system is designed to help businesses efficiently manage their employee data. It's built using React, React-Bootstrap, CSS Modules, and TypeScript, providing a modern and scalable solution for employee management.
 
 ## Features
-- **Employee CRUD Operations:** Perform Create, Read, Update, and Delete operations on employee data.
-- **Search and Filtering:** Easily search for employees and filter them based on various criteria.
+- **Employee CRUD Operations:** Perform Create, Read, and Delete operations on employee data.
+- **Search and Filtering:** Easily search for employees by name and filter them based on the department they are in.
 - **Responsive Design:** The system is responsive and works seamlessly across different devices and screen sizes.
-- **Authentication and Authorization:** Secure authentication and authorization mechanisms ensure that only authorized users can access sensitive information.
 - **Data Persistence:** Utilizes JSON Server for storing and managing employee data, ensuring data persistence between sessions.
 - **Customizable:** Easily customizable to fit specific business requirements with its modular architecture and CSS Modules.
 
