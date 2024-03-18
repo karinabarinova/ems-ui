@@ -43,46 +43,42 @@ const AddEmployeeForm = () => {
         startDate: null,
     });
 
+    const validateField = (
+        field: keyof ErrorState,
+        value: string | number,
+    ): string | null => {
+        switch (field) {
+            case "name":
+                return value ? null : "Name is required";
+            case "email":
+                if (!value) return "Email address is required";
+                return VALID_EMAIL_REGEX.test(String(value))
+                    ? null
+                    : "Invalid email format";
+            case "position":
+                return value ? null : "Position is required";
+            case "department":
+                return value ? null : "Department is required";
+            case "salary":
+                return value ? null : "Salary is required";
+            case "startDate":
+                return value ? null : "Start date is required";
+            default:
+                return null;
+        }
+    };
+
     const setField = (field: keyof ErrorState, value: string | number) => {
         setForm({
             ...form,
             [field]: value,
         });
 
-        if (!errors[field]) {
-            setErrors({
-                ...errors,
-                [field]: null,
-            });
-        }
-    };
-
-    const validateForm = () => {
-        const { startDate, department, email, name, position, salary } = form;
-        const newErrors = {} as ErrorState;
-
-        if (!email.length) {
-            newErrors.email = "Email address is required";
-        } else if (!VALID_EMAIL_REGEX.test(email)) {
-            newErrors.email = "Invalid email format";
-        }
-        if (!startDate) {
-            newErrors.startDate = "Start date is required";
-        }
-        if (!department) {
-            newErrors.department = "Department is required";
-        }
-        if (!position) {
-            newErrors.position = "Position is required";
-        }
-        if (!name) {
-            newErrors.name = "Name is required";
-        }
-        if (!salary) {
-            newErrors.salary = "Salary is required";
-        }
-
-        return newErrors;
+        const newErrors = validateField(field, value);
+        setErrors({
+            ...errors,
+            [field]: newErrors,
+        });
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -90,9 +86,7 @@ const AddEmployeeForm = () => {
 
         const formErrors = validateForm();
 
-        if (Object.keys(formErrors).length > 0) {
-            setErrors(formErrors);
-        } else {
+        if (Object.values(formErrors).every(error => error === null)) {
             form.id = employees[employees.length - 1].id + 1;
             createEmployee(form);
             setShowMessage(true);
@@ -111,7 +105,24 @@ const AddEmployeeForm = () => {
                 salary: 0,
                 startDate: "",
             });
+        } else {
+            setErrors(formErrors);
         }
+    };
+
+    const validateForm = () => {
+        const newErrors = {} as ErrorState;
+
+        for (const field in form) {
+            if (Object.prototype.hasOwnProperty.call(form, field)) {
+                newErrors[field as keyof ErrorState] = validateField(
+                    field as keyof ErrorState,
+                    form[field as keyof FormState],
+                );
+            }
+        }
+
+        return newErrors;
     };
 
     return (
@@ -129,14 +140,16 @@ const AddEmployeeForm = () => {
                             type="text"
                             placeholder="Enter full name"
                             value={form.name}
-                            required
                             onChange={e => setField("name", e.target.value)}
+                            isInvalid={!!errors.name}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.name}
+                        </Form.Control.Feedback>
                     </FormField>
                     <FormField controlId="formGridEmail" label="Email">
                         <Form.Control
                             type="email"
-                            required
                             placeholder="Enter email"
                             onChange={e => setField("email", e.target.value)}
                             isInvalid={!!errors.email}
@@ -150,11 +163,14 @@ const AddEmployeeForm = () => {
                     <FormField controlId="formGridPosition" label="Position">
                         <Form.Control
                             type="text"
-                            required
                             value={form.position}
                             placeholder="Project Manager"
                             onChange={e => setField("position", e.target.value)}
+                            isInvalid={!!errors.position}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.position}
+                        </Form.Control.Feedback>
                     </FormField>
                     <FormField
                         controlId="formGridDepartment"
@@ -162,36 +178,49 @@ const AddEmployeeForm = () => {
                         <Form.Control
                             value={form.department}
                             type="text"
-                            required
                             placeholder="Product Management"
                             onChange={e =>
                                 setField("department", e.target.value)
                             }
+                            isInvalid={!!errors.department}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.department}
+                        </Form.Control.Feedback>
                     </FormField>
                 </Row>
                 <Row className="mb-3 gap-3 flex-column flex-sm-row">
-                    <InputGroup className="mb-3">
-                        <InputGroup.Text>$</InputGroup.Text>
-                        <Form.Control
-                            type="number"
-                            min={0}
-                            value={form.salary}
-                            required
-                            aria-label="Amount (to the nearest dollar)"
-                            onChange={e => setField("salary", e.target.value)}
-                        />
-                        <InputGroup.Text>.00</InputGroup.Text>
-                    </InputGroup>
+                    <FormField controlId="formGridSalary" label="Salary">
+                        <InputGroup className="mb-3">
+                            <InputGroup.Text>$</InputGroup.Text>
+                            <Form.Control
+                                type="number"
+                                min={0}
+                                value={form.salary}
+                                aria-label="Amount (to the nearest dollar)"
+                                onChange={e =>
+                                    setField("salary", e.target.value)
+                                }
+                                isInvalid={!!errors.salary}
+                            />
+                            <InputGroup.Text>.00</InputGroup.Text>
+                        </InputGroup>
+                        <Form.Control.Feedback type="invalid">
+                            {errors.salary}
+                        </Form.Control.Feedback>
+                    </FormField>
                     <FormField controlId="formGridStartDate" label="Start date">
                         <Form.Control
                             type="date"
-                            required
                             onChange={e =>
                                 setField("startDate", e.target.value)
                             }
                             value={form.startDate}
+                            isInvalid={!!errors.startDate}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.startDate}
+                        </Form.Control.Feedback>
                     </FormField>
                 </Row>
                 <FormGroup
