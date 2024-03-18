@@ -1,13 +1,10 @@
-import {
-    Row,
-    Col,
-    Card,
-    Form,
-    InputGroup,
-    Button,
-    FormGroup,
-} from "react-bootstrap";
 import React, { useContext, useState } from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
+import FormGroup from "react-bootstrap/FormGroup";
 import { VALID_EMAIL_REGEX } from "utils/constants";
 import { EmployeesDataContext } from "context/employeesDataContext";
 import {
@@ -23,7 +20,6 @@ const FormField = ({ controlId, label, children }: FormFieldParams) => (
     </Form.Group>
 );
 
-//TODO: fix component not being render in center
 const AddEmployeeForm = () => {
     const [showMessage, setShowMessage] = useState(false);
     const { employees, createEmployee } = useContext(EmployeesDataContext);
@@ -47,7 +43,7 @@ const AddEmployeeForm = () => {
         startDate: null,
     });
 
-    const setField = (field: keyof ErrorState, value: any) => {
+    const setField = (field: keyof ErrorState, value: string | number) => {
         setForm({
             ...form,
             [field]: value,
@@ -61,7 +57,6 @@ const AddEmployeeForm = () => {
         }
     };
 
-    //date format = 2024-03-06
     const validateForm = () => {
         const { startDate, department, email, name, position, salary } = form;
         const newErrors = {} as ErrorState;
@@ -120,110 +115,100 @@ const AddEmployeeForm = () => {
     };
 
     return (
-        <Card className="col-xl-6 col-lg-8 col-md-10 col-sm-10 col-xs-10 col">
-            <Col className="d-flex justify-content-center align-items-center flex-column mx-3 my-4 m-sm-5">
-                <h2 className="text-center">Employee profile information</h2>
-                <Form className="mt-5" onSubmit={handleSubmit}>
-                    <Row className="mb-3 gap-3 flex-column flex-sm-row">
-                        <FormField controlId="formGridName" label="Full name">
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter full name"
-                                value={form.name}
-                                required
-                                onChange={e => setField("name", e.target.value)}
-                            />
-                        </FormField>
-                        <FormField controlId="formGridEmail" label="Email">
-                            <Form.Control
-                                type="email"
-                                required
-                                placeholder="Enter email"
-                                onChange={e =>
-                                    setField("email", e.target.value)
-                                }
-                                isInvalid={!!errors.email}
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                {errors.email}
-                            </Form.Control.Feedback>
-                        </FormField>
-                    </Row>
-                    <Row className="mb-3 gap-3 flex-column flex-sm-row">
-                        <FormField
-                            controlId="formGridPosition"
-                            label="Position">
-                            <Form.Control
-                                type="text"
-                                required
-                                value={form.position}
-                                placeholder="Project Manager"
-                                onChange={e =>
-                                    setField("position", e.target.value)
-                                }
-                            />
-                        </FormField>
-                        <FormField
-                            controlId="formGridDepartment"
-                            label="Department">
-                            <Form.Control
-                                value={form.department}
-                                type="text"
-                                required
-                                placeholder="Product Management"
-                                onChange={e =>
-                                    setField("department", e.target.value)
-                                }
-                            />
-                        </FormField>
-                    </Row>
-                    <Row className="mb-3 gap-3 flex-column flex-sm-row">
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text>$</InputGroup.Text>
-                            <Form.Control
-                                type="number"
-                                min={0}
-                                value={form.salary}
-                                required
-                                aria-label="Amount (to the nearest dollar)"
-                                onChange={e =>
-                                    setField("salary", e.target.value)
-                                }
-                            />
-                            <InputGroup.Text>.00</InputGroup.Text>
-                        </InputGroup>
-                        <FormField
-                            controlId="formGridStartDate"
-                            label="Start date">
-                            <Form.Control
-                                type="date"
-                                required
-                                onChange={e =>
-                                    setField("startDate", e.target.value)
-                                }
-                                value={form.startDate}
-                            />
-                        </FormField>
-                    </Row>
-                    <FormGroup
-                        controlId="submit"
-                        className="d-flex justify-content-center align-items-center">
-                        <Button
-                            className="my-2"
-                            variant="primary"
-                            type="submit">
-                            Submit
-                        </Button>
-                    </FormGroup>
-                    <div
-                        className={`d-flex justify-content-center align-items-center ${!showMessage && "visually-hidden"}`}>
-                        <div className="text-success font-weight-bold">
-                            Employee was created successfully
-                        </div>
+        <Col
+            xs={10}
+            sm={10}
+            md={10}
+            xl={8}
+            className="d-flex justify-content-center align-items-center flex-column mx-3 my-4 m-sm-5">
+            <h2 className="text-center">Employee profile information</h2>
+            <Form className="mt-5" onSubmit={handleSubmit}>
+                <Row className="mb-3 gap-3 flex-column flex-sm-row">
+                    <FormField controlId="formGridName" label="Full name">
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter full name"
+                            value={form.name}
+                            required
+                            onChange={e => setField("name", e.target.value)}
+                        />
+                    </FormField>
+                    <FormField controlId="formGridEmail" label="Email">
+                        <Form.Control
+                            type="email"
+                            required
+                            placeholder="Enter email"
+                            onChange={e => setField("email", e.target.value)}
+                            isInvalid={!!errors.email}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.email}
+                        </Form.Control.Feedback>
+                    </FormField>
+                </Row>
+                <Row className="mb-3 gap-3 flex-column flex-sm-row">
+                    <FormField controlId="formGridPosition" label="Position">
+                        <Form.Control
+                            type="text"
+                            required
+                            value={form.position}
+                            placeholder="Project Manager"
+                            onChange={e => setField("position", e.target.value)}
+                        />
+                    </FormField>
+                    <FormField
+                        controlId="formGridDepartment"
+                        label="Department">
+                        <Form.Control
+                            value={form.department}
+                            type="text"
+                            required
+                            placeholder="Product Management"
+                            onChange={e =>
+                                setField("department", e.target.value)
+                            }
+                        />
+                    </FormField>
+                </Row>
+                <Row className="mb-3 gap-3 flex-column flex-sm-row">
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text>$</InputGroup.Text>
+                        <Form.Control
+                            type="number"
+                            min={0}
+                            value={form.salary}
+                            required
+                            aria-label="Amount (to the nearest dollar)"
+                            onChange={e => setField("salary", e.target.value)}
+                        />
+                        <InputGroup.Text>.00</InputGroup.Text>
+                    </InputGroup>
+                    <FormField controlId="formGridStartDate" label="Start date">
+                        <Form.Control
+                            type="date"
+                            required
+                            onChange={e =>
+                                setField("startDate", e.target.value)
+                            }
+                            value={form.startDate}
+                        />
+                    </FormField>
+                </Row>
+                <FormGroup
+                    controlId="submit"
+                    className="d-flex justify-content-center align-items-center">
+                    <Button className="my-2" variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </FormGroup>
+                <div
+                    className={`d-flex justify-content-center align-items-center ${!showMessage && "visually-hidden-focusable"}`}>
+                    <div className="text-success font-weight-bold">
+                        Employee was created successfully
                     </div>
-                </Form>
-            </Col>
-        </Card>
+                </div>
+            </Form>
+        </Col>
     );
 };
 

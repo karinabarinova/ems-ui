@@ -3,7 +3,6 @@
     text-decoration: none;
     cursor: pointer;
     border: none;
-    font-size: 24px;
 }
 
 .paginationButton > a[role="button"]:hover {
@@ -24,9 +23,4 @@ a[role="button"]:active {
     border: none;
     background-color: #ffffff;
     border-color: #ffffff;
-    font-size: 24px;
-}
-
-.paginationCounter {
-    font-size: 18px;
 }

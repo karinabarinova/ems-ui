@@ -1,5 +1,6 @@
 import React from "react";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import { FilterEmployeesProps } from "./FilterEmployees.types";
 import styles from "./FilterEmployees.module.css";
 
@@ -22,7 +23,7 @@ const FilterEmployees: React.FC<FilterEmployeesProps> = ({
             title={title}
             onSelect={onDepartmentChange}
             variant="secondary"
-            className={`${styles.scrollableDropdown} col-12 col-md-4`}
+            className={styles.scrollableDropdown}
             menuVariant="dark">
             <Dropdown.Item
                 className="font-weight-bold"

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useMemo } from "react";
 import debounce from "lodash.debounce";
-import { Form } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import { SearchProps } from "./Search.types";
 
 const Search = ({ setSearchValue }: SearchProps) => {
@@ -18,9 +18,7 @@ const Search = ({ setSearchValue }: SearchProps) => {
     });
 
     return (
-        <Form
-            className="col-12 col-md-8 pr-sm-0 pr-md-3"
-            onSubmit={e => e.preventDefault()}>
+        <Form className="pe-0 pe-md-3" onSubmit={e => e.preventDefault()}>
             <Form.Control
                 type="text"
                 placeholder="Search for a name..."

@@ -3,7 +3,6 @@
     text-decoration: none;
     cursor: pointer;
     border: none;
-    font-size: 24px;
 }
 
 .paginationButton > span:global(.page-link) {
@@ -11,9 +10,4 @@
     border: none;
     background-color: white;
     border-color: white;
-    font-size: 24px;
-}
-
-.paginationCounter {
-    font-size: 18px;
 }

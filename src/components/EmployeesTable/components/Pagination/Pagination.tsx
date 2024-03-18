@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination } from "react-bootstrap";
+import Pagination from "react-bootstrap/Pagination";
 import { TablePaginationProps } from "./Pagination.types";
 import styles from "./Pagination.module.css";
 

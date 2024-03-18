@@ -1,5 +1,6 @@
 import React from "react";
-import { Table, Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
 import { BsFillTrash3Fill } from "react-icons/bs";
 import { ITEMS_PER_PAGE } from "utils/constants";
 import { TableContentProps } from "./Table.types";
@@ -62,7 +63,7 @@ const TableContent: React.FC<TableContentProps> = ({
                             <td>{department}</td>
                             <td>{formatSalary(salary)}</td>
                             <td>{formatDate(startDate)}</td>
-                            <td>
+                            <td className="d-flex justify-content-center align-items-center">
                                 <Button
                                     variant="outline-danger"
                                     onClick={() => onDelete(id)}>

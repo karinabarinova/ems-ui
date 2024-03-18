@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { EMPLOYEES_ENDPOINT } from "utils/constants";
-import { Employee } from "components/EmployeesTable/EmployeesTable.types";
+import {useEffect, useState} from "react";
+import {EMPLOYEES_ENDPOINT} from "utils/constants";
+import {Employee} from "components/EmployeesTable/EmployeesTable.types";
 
 export interface EmployeesData {
     employees: Employee[];
@@ -10,9 +10,11 @@ export interface EmployeesData {
     setSearchValue: React.Dispatch<React.SetStateAction<string>>;
     deleteEmployee: (index: number) => void;
     createEmployee: (employee: Employee) => void;
+    loading: boolean;
 }
 
 export const useEmployeesData = (): EmployeesData => {
+    const [loading, setLoading] = useState<boolean>(true);
     const [employees, setEmployees] = useState<Employee[]>([]);
     const [selectedDepartment, setSelectedDepartment] = useState<string>("");
     const [searchValue, setSearchValue] = useState<string>("");
@@ -33,9 +35,10 @@ export const useEmployeesData = (): EmployeesData => {
                 throw new Error("Failed to delete an employees");
             }
             const updatedEmployees = employees.filter(
-                ({ id }) => id !== employeeId,
+                ({id}) => id !== employeeId,
             );
             setEmployees(updatedEmployees);
+            setLoading(false);
         } catch (error) {
             console.error(error);
         }
@@ -56,6 +59,7 @@ export const useEmployeesData = (): EmployeesData => {
             }
 
             setEmployees(oldEmployees => [...oldEmployees, employee]);
+            setLoading(false);
         } catch (error) {
             console.error(error);
         }
@@ -69,6 +73,7 @@ export const useEmployeesData = (): EmployeesData => {
             }
             const data: Employee[] = await response.json();
             setEmployees(data);
+            setLoading(false);
         } catch (error) {
             console.error(error);
         }
@@ -82,5 +87,6 @@ export const useEmployeesData = (): EmployeesData => {
         setSearchValue,
         deleteEmployee,
         createEmployee,
+        loading,
     };
 };

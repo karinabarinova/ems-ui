@@ -29,6 +29,7 @@ const EmployeesDataContextProvider = ({
         setSearchValue,
         selectedDepartment,
         setSelectedDepartment,
+        loading,
     } = useEmployeesData();
 
     // Filter employees based on selected department, search value, or both
@@ -65,6 +66,7 @@ const EmployeesDataContextProvider = ({
                 setSearchValue,
                 selectedDepartment,
                 setSelectedDepartment,
+                loading,
                 currentPage,
                 totalPages,
                 firstIndex,
