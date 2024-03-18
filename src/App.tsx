@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AddEmployee from "pages/add-employee";
-import ErrorPage from "pages/error";
-import Home from "pages/home";
+import AddEmployee from "pages/AddEmployee";
+import ErrorPage from "pages/Error";
+import Home from "pages/Home";
 import EmployeesDataContextProvider from "context/employeesDataContext";
 import Layout from "./Layout";
 import "./App.module.css";
