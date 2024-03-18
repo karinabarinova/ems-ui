@@ -66,6 +66,7 @@ const TableContent: React.FC<TableContentProps> = ({
                             <td className="d-flex justify-content-center align-items-center">
                                 <Button
                                     variant="outline-danger"
+                                    aria-label="Delete Employee"
                                     onClick={() => onDelete(id)}>
                                     <BsFillTrash3Fill />
                                 </Button>
