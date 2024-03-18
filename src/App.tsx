@@ -11,11 +11,10 @@ function App() {
     return (
         <EmployeesDataContextProvider>
             <Routes>
-                <Route element={<Layout />} errorElement={<ErrorPage />}>
-                    <Route path="/" element={<Home />}></Route>
-                    <Route
-                        path="/add-employee"
-                        element={<AddEmployee />}></Route>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/add-employee" element={<AddEmployee />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Route>
             </Routes>
         </EmployeesDataContextProvider>

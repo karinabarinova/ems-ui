@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
-import {EMPLOYEES_ENDPOINT} from "utils/constants";
-import {Employee} from "components/EmployeesTable/EmployeesTable.types";
+import { useEffect, useState } from "react";
+import { EMPLOYEES_ENDPOINT } from "utils/constants";
+import { Employee } from "components/EmployeesTable/EmployeesTable.types";
 
 export interface EmployeesData {
     employees: Employee[];
@@ -35,7 +35,7 @@ export const useEmployeesData = (): EmployeesData => {
                 throw new Error("Failed to delete an employees");
             }
             const updatedEmployees = employees.filter(
-                ({id}) => id !== employeeId,
+                ({ id }) => id !== employeeId,
             );
             setEmployees(updatedEmployees);
         } catch (error) {

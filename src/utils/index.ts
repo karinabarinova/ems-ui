@@ -4,6 +4,10 @@ export const formatSalary = (salary: number) => {
 };
 
 export const formatDate = (date: string) => {
-    const formatter = new Intl.DateTimeFormat('en', {day: '2-digit', month: 'short', year: 'numeric'});
+    const formatter = new Intl.DateTimeFormat("en", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+    });
     return formatter.format(new Date(date));
 };
