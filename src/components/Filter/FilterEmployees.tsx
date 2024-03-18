@@ -22,7 +22,7 @@ const FilterEmployees: React.FC<FilterEmployeesProps> = ({
             title={title}
             onSelect={onDepartmentChange}
             variant="secondary"
-            className={`${styles.scrollableDropdown} col-3`}
+            className={`${styles.scrollableDropdown} col-12 col-md-4`}
             menuVariant="dark">
             <Dropdown.Item
                 className="font-weight-bold"

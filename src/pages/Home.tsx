@@ -21,8 +21,8 @@ const Home: React.FC = () => {
     };
 
     return (
-        <Container fluid className="g-0 px-5">
-            <Container className="d-flex flex-sm-row flex-column justify-content-between gap-3 my-5 m-0 p-0">
+        <Container fluid className="g-0 px-3 px-md-5">
+            <Container className="d-flex flex-sm-row flex-column justify-content-between gap-3 gap-md-0 my-5 m-0 p-0">
                 <Search setSearchValue={setSearchValue} />
                 <FilterEmployees
                     selectedDepartment={selectedDepartment}

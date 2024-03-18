@@ -1,8 +1,9 @@
 .scrollableDropdown button {
-    width: 200px;
+    width: 100%;
 }
 
 .scrollableDropdown:nth-child(2) div {
+    width: 100%;
     height: 350px;
     overflow: scroll;
 }

@@ -18,10 +18,12 @@ const Search = ({ setSearchValue }: SearchProps) => {
     });
 
     return (
-        <Form className="col-9" onSubmit={e => e.preventDefault()}>
+        <Form
+            className="col-12 col-md-8 pr-sm-0 pr-md-3"
+            onSubmit={e => e.preventDefault()}>
             <Form.Control
                 type="text"
-                placeholder="Search..."
+                placeholder="Search for a name..."
                 onChange={debouncedResults}
             />
         </Form>
