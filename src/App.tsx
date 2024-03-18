@@ -5,7 +5,7 @@ import ErrorPage from "pages/error";
 import Home from "pages/home";
 import EmployeesDataContextProvider from "context/employeesDataContext";
 import Layout from "./Layout";
-import "./App.css";
+import "./App.module.css";
 
 function App() {
     return (
