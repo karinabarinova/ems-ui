@@ -38,7 +38,6 @@ export const useEmployeesData = (): EmployeesData => {
                 ({id}) => id !== employeeId,
             );
             setEmployees(updatedEmployees);
-            setLoading(false);
         } catch (error) {
             console.error(error);
         }
@@ -59,7 +58,6 @@ export const useEmployeesData = (): EmployeesData => {
             }
 
             setEmployees(oldEmployees => [...oldEmployees, employee]);
-            setLoading(false);
         } catch (error) {
             console.error(error);
         }
@@ -67,6 +65,7 @@ export const useEmployeesData = (): EmployeesData => {
 
     const fetchEmployees = async () => {
         try {
+            setLoading(true);
             const response = await fetch(EMPLOYEES_ENDPOINT);
             if (!response.ok) {
                 throw new Error("Failed to fetch employees");
