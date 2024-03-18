@@ -20,11 +20,11 @@ Welcome to the Employee Management System documentation! This system is designed
 ## Getting Started
 1. **Clone the Repository:**
 ```bash
-    git clone https://github.com/your-username/employee-management-system.git
+    git clone https://github.com/karinabarinova/ems-ui.git
 ```
 2. **Install Dependencies:**
 ```bash
-    cd employee-management-system
+    cd ems-ui
     npm install
 ```
 3. **Start JSON Server:**
@@ -36,7 +36,7 @@ Welcome to the Employee Management System documentation! This system is designed
     npm start
 ```
 5. **Access the Application:**
-Open your browser and navigate to `http://localhost:3000` to access the Employee Management System.
+Open your browser and navigate to `http://localhost:8080` to access the Employee Management System.
 
 ## Contributing
 We welcome contributions from the community to help improve the Employee Management System. If you'd like to contribute, please follow these steps:
